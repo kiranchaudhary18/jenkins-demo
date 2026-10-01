@@ -27,6 +27,14 @@ pipeline {
             }
         }
 
+        stage('Docker Run') {
+            steps {
+               bat 'docker stop jenkins-demo-container || exit 0'
+               bat 'docker rm jenkins-demo-container || exit 0'
+               bat 'docker run -d --name jenkins-demo-container -p 3000:3000 jenkins-demo:latest'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Jenkins + Docker Build Successful!'
