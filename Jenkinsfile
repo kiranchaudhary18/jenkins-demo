@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Checkout') {
+            steps {
+                echo 'Checking out code...'
+            }
+        }
+
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
@@ -12,6 +18,12 @@ pipeline {
         stage('Run Tests') {
             steps {
                 bat 'npm test'
+            }
+        }
+
+        stage('Docker Check') {
+            steps {
+                bat 'docker --version'
             }
         }
 
