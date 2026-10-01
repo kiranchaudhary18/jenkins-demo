@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
         "Content-Type": "text/html"
     });
 res.end(`
-    <h1>Hello from Jenkins CI/CD 🚀</h1>
+    <h1>Hello from Jenkins CI/CD </h1>
     <p>Automatically deployed by Jenkins + Docker.</p>
 `);
 });
